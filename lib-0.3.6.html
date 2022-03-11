@@ -21,7 +21,7 @@
           
           return url;
         },
-        forward: ["dataLayer.push"],
+        forward: ["dataLayer.push", "fbq"],
         lib: "/partytown-demo/lib-0.3.6/"
       };
     </script>
@@ -49,5 +49,13 @@
   </head>
   <body>
     <a href="index.html">back</a>
+    </br>
+    </br>
+    <button onclick="sendFacebookEvent()">Facebook event test</button>
   </body>
+  <script>
+    function sendFacebookEvent() {
+      fbq("track", "TestEvent");
+    }
+  </script>
 </html>
